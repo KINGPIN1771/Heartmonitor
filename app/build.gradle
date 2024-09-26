@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    namespace 'com.asv.heartmonitor'
+    compileSdk 35
+    defaultConfig {
+        applicationId "com.asv.heartmonitor"
+        minSdk 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    viewBinding {
+        enabled = true
+    }
+    buildToolsVersion '35.0.0'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Unit Testing
+    testImplementation 'junit:junit:4.13.2'
+
+    // Android Instrumented Tests
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5' // Updated to AndroidX JUnit
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1' // Updated to latest Espresso
+    androidTestImplementation 'androidx.test:runner:1.6.2' // Ensure this is present
+}
