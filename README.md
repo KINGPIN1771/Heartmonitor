@@ -3,7 +3,7 @@ Heartmonitor is an Android based heart rate monitor which uses the camera and it
 <p align="center">
 <img width=300px src="demo.gif" alt="demo">
 </p>
-Now updated to support newer android with AndroidX Libraries.
+Now updated to support latest android version with AndroidX Libraries.
 
 ## How it works
 * The user enters his/her age and then measures his/her resting heart rate which gets stored in the app.
